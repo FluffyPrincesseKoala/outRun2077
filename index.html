@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEON DRIFT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      overflow: hidden; 
+      background: #0a0015; 
+      font-family: 'Orbitron', monospace;
+    }
+    #ui {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+    }
+    .stat {
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      background: rgba(10, 0, 21, 0.8);
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 10px #00ffff, inset 0 0 20px rgba(0, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+    .stat-label {
+      color: #ff00ff;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+    .stat-value {
+      color: #00ffff;
+      font-size: 32px;
+      font-weight: 900;
+      text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+    #game-over {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ff0044;
+      font-size: 64px;
+      font-weight: 900;
+      text-shadow: 0 0 20px #ff0044, 0 0 40px #ff0044, 0 0 60px #ff0044;
+      display: none;
+      z-index: 100;
+      letter-spacing: 10px;
+      animation: glitch 0.3s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: translate(-50%, -50%) skew(0deg); }
+      25% { transform: translate(-50%, -50%) skew(-2deg); }
+      75% { transform: translate(-50%, -50%) skew(2deg); }
+      100% { transform: translate(-50%, -50%) skew(0deg); }
+    }
+    #restart {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #00ffff;
+      font-size: 18px;
+      display: none;
+      z-index: 100;
+      cursor: pointer;
+      text-shadow: 0 0 10px #00ffff;
+      letter-spacing: 3px;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    #title {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: #ff00ff;
+      font-size: 14px;
+      text-shadow: 0 0 10px #ff00ff;
+      letter-spacing: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
